@@ -226,7 +226,6 @@ body {
 }
 .image-block-5 {
   position: relative;
-  /* max-height: 610px; */
 }
 .image-block-5::before {
   position: absolute;
@@ -310,7 +309,6 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 
   max-height: 650px;
   max-width: 400px;
