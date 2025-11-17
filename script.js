@@ -6,11 +6,9 @@ async function turnOver(el) {
 
   if (numberOfBlock && imgEl) {
     const currentSrc = imgEl.getAttribute("src");
-
-    // Добавляем класс анимации исчезновения
     imgEl.classList.add("image-flipping");
-    // Ждем завершения анимации исчезновения
-    await new Promise((resolve) => setTimeout(resolve, 250));
+
+    await new Promise((resolve) => setTimeout(resolve, 150));
 
     if (currentSrc.includes("girl-")) {
       imgEl.setAttribute("src", `./img/attachment-${numberOfBlock}.png`);
@@ -18,7 +16,6 @@ async function turnOver(el) {
       imgEl.setAttribute("src", `./img/girl-${numberOfBlock}.png`);
     }
 
-    // Убираем класс анимации для появления
     imgEl.classList.remove("image-flipping");
   }
 }
