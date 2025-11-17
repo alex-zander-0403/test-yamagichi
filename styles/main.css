@@ -110,8 +110,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  margin: clamp(40px, 6.67vw, 80px);
-  min-height: 200px;
+  margin-block: clamp(40px, 6.67vw, 80px);
 }
 
 .title::before,
@@ -140,13 +139,13 @@ body {
 }
 
 .title-num {
-  margin-right: -10px;
-  margin-top: -40px;
+  margin-right: 0%;
+  margin-top: -4%;
 
   font-family: var(--font-family-base);
   font-weight: 400;
   font-size: 188px;
-  /* font-size: clamp(100px, 9.79vw, 188px); */
+
   line-height: 121%;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -157,7 +156,6 @@ body {
   font-family: var(--font-family-base);
   font-weight: 600;
   font-size: 49px;
-  /* font-size: clamp(30px, 2.55vw, 49px); */
   line-height: 1.21;
   letter-spacing: -0.01em;
   white-space: nowrap;
@@ -182,13 +180,14 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-height: 610px;
-
+  height: 610px;
   overflow: hidden;
+  
   border-radius: clamp(20px, 5vw, 70px);
   box-shadow: 16px 13px 25px -5px rgba(65, 60, 57, 0.21);
   background: var(--color-2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 [class^="image-block-"]:hover {
   transform: scale(1.02);
@@ -196,8 +195,14 @@ body {
   box-shadow: 0 20px 40px rgba(65, 60, 57, 0.5);
 }
 [class^="image-block-"] > img {
+  transition: all 0.1s ease-in-out;
   z-index: 5;
 }
+.image-flipping {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
 .image-block-1 {
   background-color: #7a7a7b;
 }
@@ -348,6 +353,10 @@ body {
 }
 
 @media (max-width: 576px) {
+  .title::before,
+  .title::after {
+    display: none;
+  }
   .images {
     padding: 10px;
   }
@@ -357,8 +366,15 @@ body {
   }
   .image-text {
     font-size: clamp(20px, 1.35vw, 26px);
+    white-space: inherit;
   }
 }
 
 @media (max-width: 360px) {
+  .title-desc {
+    font-size: 20px;
+  }
+  .image-text {
+    font-size: 15px;
+  }
 }
