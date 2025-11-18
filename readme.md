@@ -1,6 +1,6 @@
 ## 🚀 Запуск
 
-https://alex-zander-0403.github.io/test-yamagichi/
+https://alex-zander-0403.github.io/test-yamaguchi/
 
 ## Особенности реализации
 
